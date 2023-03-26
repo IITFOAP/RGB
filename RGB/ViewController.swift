@@ -21,18 +21,16 @@ final class ViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         acceptsСolor.layer.cornerRadius = 15
-        setsTheColorMode(redSlider)
-        setsTheColorMode(greenSlider)
-        setsTheColorMode(blueSlider)
+        setsTheColorMode()
     }
     
 
-    @IBAction func setsTheColorMode(_ sender: UISlider) {
-        if sender.tag == 1 {
+    @IBAction func setsTheColorMode() {
+        if redSlider.tag == 1 {
             redColorContrast.text = redSlider.value.formatted(.number.precision(.fractionLength(2)))
-        } else if sender.tag == 2 {
+        } else if greenSlider.tag == 2 {
             greenColorContrast.text = greenSlider.value.formatted(.number.precision(.fractionLength(2)))
-        } else if sender.tag == 3 {
+        } else if blueSlider.tag == 3 {
             blueColorContrast.text = blueSlider.value.formatted(.number.precision(.fractionLength(2)))
         }
         
