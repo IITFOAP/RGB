@@ -8,14 +8,8 @@
 import UIKit
 
 final class ViewController: UIViewController {
-
     
     @IBOutlet var acceptsСolor: UIView!
-    
-    @IBOutlet var redColor: UILabel!
-    @IBOutlet var greenColor: UILabel!
-    @IBOutlet var blueColor: UILabel!
-    
     
     @IBOutlet var redColorContrast: UILabel!
     @IBOutlet var greenColorContrast: UILabel!
@@ -25,42 +19,35 @@ final class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        acceptsСolor.layer.cornerRadius = 10
-    
+    override func viewWillLayoutSubviews() {
+        acceptsСolor.layer.cornerRadius = 15
+        setsTheColorMode(redSlider)
+        setsTheColorMode(greenSlider)
+        setsTheColorMode(blueSlider)
     }
     
-    
-    @IBAction func passesTheValuesOfTheRedSlider() {
-        redColorContrast.text = redSlider.value.formatted(
-            .number
-            .precision(
-            .fractionLength(2))
-        )
 
+    @IBAction func setsTheColorMode(_ sender: UISlider) {
+        if sender.tag == 1 {
+            redColorContrast.text = redSlider.value.formatted(.number.precision(.fractionLength(2)))
+        } else if sender.tag == 2 {
+            greenColorContrast.text = greenSlider.value.formatted(.number.precision(.fractionLength(2)))
+        } else if sender.tag == 3 {
+            blueColorContrast.text = blueSlider.value.formatted(.number.precision(.fractionLength(2)))
+        }
+        
+        acceptsСolor.backgroundColor = changesColorView()
     }
     
-    @IBAction func passesTheValuesOfTheGreenSlider() {
-        greenColorContrast.text = greenSlider.value.formatted(
-            .number
-            .precision(
-            .fractionLength(2))
-        )
-     
-
-    }
-
-    @IBAction func passesTheValuesOfTheBlueSlider() {
-        blueColorContrast.text = blueSlider.value.formatted(
-            .number
-            .precision(
-            .fractionLength(2))
-        )
-    }
     
-    func changesColorView() {
-       
+    private func changesColorView() -> UIColor{
+        let color  = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1)
+        
+        return color
     }
     
 

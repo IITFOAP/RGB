@@ -76,28 +76,28 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ip2-0F-WnT">
                                         <rect key="frame" x="121" y="0.0" width="277" height="100"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tE8-hm-xgL">
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tE8-hm-xgL">
                                                 <rect key="frame" x="-2" y="0.0" width="281" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="cE9-Fb-4HC"/>
                                                 </constraints>
                                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                 <connections>
-                                                    <action selector="passesTheValuesOfTheRedSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="Dae-Z7-89J"/>
+                                                    <action selector="setsTheColorMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="hCC-xd-IQ1"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-bz-EkW">
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.27000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-bz-EkW">
                                                 <rect key="frame" x="-2" y="35" width="281" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                 <connections>
-                                                    <action selector="passesTheValuesOfTheGreenSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="Sx7-RH-Hx3"/>
+                                                    <action selector="setsTheColorMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ge1-P0-Hcf"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="230-BO-drQ">
+                                            <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.48999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="230-BO-drQ">
                                                 <rect key="frame" x="-2" y="70" width="281" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                 <connections>
-                                                    <action selector="passesTheValuesOfTheBlueSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="UZQ-Cv-awS"/>
+                                                    <action selector="setsTheColorMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="fve-48-AxQ"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -127,13 +127,10 @@
                     </view>
                     <connections>
                         <outlet property="acceptsСolor" destination="VNM-4K-pso" id="JQX-R0-ika"/>
-                        <outlet property="blueColor" destination="RZT-vZ-1n2" id="R8b-d1-Tfv"/>
                         <outlet property="blueColorContrast" destination="UwP-vH-Fto" id="Hob-Ra-8yd"/>
                         <outlet property="blueSlider" destination="230-BO-drQ" id="XbH-O0-baV"/>
-                        <outlet property="greenColor" destination="ZlD-Xm-Gwu" id="6bG-U6-Ahd"/>
                         <outlet property="greenColorContrast" destination="auu-JU-CIK" id="APi-rU-exD"/>
                         <outlet property="greenSlider" destination="sZk-bz-EkW" id="ho1-lb-hLQ"/>
-                        <outlet property="redColor" destination="dde-Zt-sAO" id="vNT-TQ-IAI"/>
                         <outlet property="redColorContrast" destination="4y1-3h-xs3" id="nL1-FW-m0j"/>
                         <outlet property="redSlider" destination="tE8-hm-xgL" id="XhE-kx-gss"/>
                     </connections>
